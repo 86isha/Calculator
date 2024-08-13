@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-evenly; 
+        }
+        .calc{
+            width: 400px;
+            background-color: #2b2f37;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px;
+        }
+        .display{
+            height: 80px;
+            width: 90%;
+            margin-top: 30px;
+        }
+        .display input{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 40px;
+            background-color: #53565b;
+            border: none;
+            color: white;
+
+        }
+        .keys{
+            width: 90%;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .keys button{
+            height: 60px;
+            width: 60px;
+            margin: 13px 10px;
+            border-radius: 20px;
+            border: none;
+            flex-grow: 1;
+            box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #2b2f37;
+            color: white;
+        }
+        .gg{
+            color: rgb(30, 95, 121) !important;
+            background-color: rgb(174, 169, 169) !important;
+            font-weight: 300 !important;
+        }
+        .yy{
+            background-color: rgb(175, 175, 29) !important;
+        }
+        .head{
+            color: red;
+            margin-top: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+    <h1 class="head">DIGITAL
+        <br>
+        CALCULATOR
+    </h1>
+    <p></p>
+    </div>
+    <div class="calc">
+        <div class="display">
+            <input type="text" id="">
+        </div>
+        <div class="keys">
+            <button class="gg">AC</button> 
+            <button  class="gg">DEL</button>
+            <button  class="gg">%</button> 
+            <button  class="yy">/</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="yy">*</button> 
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="yy">-</button>
+            
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="yy">+</button>
+            
+            <button>0</button>
+            <button>00</button>
+            <button>.</button>
+            <button class="yy">=</button>
+             
+             
+            
+        </div>
+    </div>
+ 
+
+    <script>
+        let a= document.querySelectorAll("button");
+        let inp= document.querySelector("input");
+
+        for(let i of a){
+
+            i.onclick = function(){
+
+                if(i.innerText == "="){
+
+                    let val= inp.value;
+                    inp.value = eval(val)
+                }
+                else if(i.innerText == "AC"){
+                    inp.value =" "
+                }
+                else if(i.innerText == "DEL"){
+                    inp.value = inp.value.slice(0,-1)
+                }
+                else{
+                    inp.value+= i.innerText
+                    console.log(i.innerText)
+                }
+            }
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
